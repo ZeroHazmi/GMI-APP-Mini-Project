@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "1.6.0"
 }
 
 android {
     namespace = "com.example.gmiapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.gmiapp"
@@ -83,4 +84,10 @@ dependencies {
 
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+    //Material3
+    implementation("androidx.compose.material3:material3:1.4.0-alpha02")
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0")
 }
